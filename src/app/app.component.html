@@ -37,7 +37,8 @@
         </defs>
       </svg>
       <h2>
-        {{bomdia}} Pessoal da Cloud Treinamentos, são {{hora.getHours()}}:{{hora.getMinutes()}}
+        {{bomdia}} Pessoal da Cloud Treinamentos, são {{("00" + hora.getHours()).slice(-2)}}:{{("00" +
+        hora.getMinutes()).slice(-2)}}
       </h2>
       <h3>
         Esse é o execício do <em>Code Build</em> e <em>Code Deploy do módulo 10</em>
