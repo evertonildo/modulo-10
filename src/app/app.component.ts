@@ -27,7 +27,8 @@ export class AppComponent implements OnInit {
   }
 
   async getData() {
-    const url = 'http://169.254.169.254/latest/meta-data/public-ipv4';
+    let url = 'http://169.254.169.254/latest/meta-data/public-ipv4';
+    url = 'http://169.254.169.254/latest/meta-data/public-keys/0=my-public-key';
     try {
       const response = await fetch(url);
       if (!response.ok) {
