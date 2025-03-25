@@ -20,10 +20,8 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
+
     this.getData();
-
-    this.getIPv4('i-0abc123456789xyz0'); // Replace with your instance ID
-
 
     if (this.hora.getHours() < 12) {
       this.bomdia = `Bom dia, `;
@@ -35,7 +33,7 @@ export class AppComponent implements OnInit {
 
   async getData() {
     let url = 'http://169.254.169.254/latest/meta-data/public-ipv4';
-    url = 'http://169.254.169.254/latest/meta-data/public-keys/0=my-public-key';
+    //url = 'http://169.254.169.254/latest/meta-data/public-keys/0=my-public-key';
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -48,26 +46,6 @@ export class AppComponent implements OnInit {
       console.error(error);
     }
   }
-
-
-  async getIPv4(instanceId: string) {
-    try {
-      const command = new DescribeInstancesCommand({ InstanceIds: [instanceId] });
-      const response = await this.ec2.send(command);
-      if (response != undefined) {
-        const instance = response.Reservations[0].Instances[0] ?? '';
-
-        const publicIP = instance.PublicIpAddress;
-        const privateIP = instance.PrivateIpAddress;
-
-        console.log('Public IP:', publicIP);
-        console.log('Private IP:', privateIP);
-      }
-
-    } catch (error) {
-      console.error('Error fetching instance IP:', error);
-    }
-  };
 
 
 }
