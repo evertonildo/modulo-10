@@ -11,7 +11,15 @@ RUN npm build
 
 COPY . .
 
-#ADD ./files/tar.gz ./
+ADD ./files/tar.gz ./
+
+RUN useradd joao
+
+USER joao
 
 # CMD [ "pm2", "status" ]
 ENTRYPOINT [ "pm2", "status" ]
+
+EXPOSE 80
+
+
