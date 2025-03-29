@@ -2,7 +2,7 @@ version: 0.2
 env:
     variables:
         CACHE_CONTROL: "86400"
-        S3_BUCKET: "modulo10.dut2.app.br"
+        S3_BUCKET: "build.modulo-10"
         BUILD_FOLDER: "modulo10"
         BUILD_ENV: "prod"
 phases:
@@ -22,5 +22,23 @@ phases:
 artifacts:
     files:
         - '**/*'
-    base-directory: 'dist*'
+    base-directory: 'dist/browser'
     discard-paths: yes
+
+#version: 0.2
+
+#phases:
+#  pre_build:
+#    commands:
+#      - echo Instalando dependencias
+#      - npm install
+#  build:
+#    commands:
+#      - echo Build da aplicacao iniciado em 'date'
+#      - npm run build
+#  post_build:
+#    commands:
+#      - echo Post build em 'date'
+#artifacts:
+#  files:
+#    - build/**/*
