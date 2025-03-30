@@ -3,7 +3,7 @@ env:
     variables:
         CACHE_CONTROL: "86400"
         S3_BUCKET: "build.modulo-10"
-#        BUILD_FOLDER: "modulo10"
+        BUILD_FOLDER: "dist/browser"
 #        BUILD_ENV: "prod"
 phases:
     install:
