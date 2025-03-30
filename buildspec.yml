@@ -22,9 +22,9 @@ phases:
             - echo Build completed on `date`
 artifacts:
     files:
-        - '**/*'
-    base-directory: 'dist/browser'
-    discard-paths: yes
+        - 'dist/browser/**/*'
+        - 'scripts/**/*'
+        - 'appspec.yml'
 
 #version: 0.2
 
