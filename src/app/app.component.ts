@@ -5,6 +5,7 @@ import { EC2Client, DescribeInstancesCommand } from '@aws-sdk/client-ec2';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterOutlet, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
